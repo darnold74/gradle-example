@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.junit.vintage:junit-vintage-engine:4.12.0-RC2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.junit.vintage/junit-vintage-engine/4.12.0-RC2/2559279c40e07313f08552add355642c118ea82f/junit-vintage-engine-4.12.0-RC2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.junit.vintage/junit-vintage-engine/4.12.0-RC2/1f08be1ad3571ec01b0243e10535b26cd77795fa/junit-vintage-engine-4.12.0-RC2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
