@@ -26,7 +26,7 @@ apply plugin: 'idea'
 apply plugin: 'org.junit.platform.gradle.plugin'
 
 jar {
-    baseName = 'junit5-gradle-consumer'
+    baseName = 'gradle-example-'
     version = '1.0.0-SNAPSHOT'
 }
 
