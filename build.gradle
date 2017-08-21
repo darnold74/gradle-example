@@ -40,12 +40,12 @@ junitPlatform {
     // platformVersion '1.0.0-RC2'
     filters {
         engines {
-            // include 'junit-jupiter', 'junit-vintage'
+            include 'junit-jupiter', 'junit-vintage'
             // exclude 'custom-engine'
         }
         tags {
-            // include 'fast'
-            exclude 'slow'
+            include 'fast'
+            //exclude 'slow'
         }
         // includeClassNamePattern '.*Test'
     }
@@ -74,4 +74,10 @@ dependencies {
 task wrapper(type: Wrapper) {
     description = 'Generates gradlew[.bat] scripts'
     gradleVersion = '4.0.1'
+}
+
+task archiveZip(type: Zip, dependsOn: 'jar') {
+    baseName = 'project'
+
+    from fileTree('out')
 }
