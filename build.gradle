@@ -79,6 +79,6 @@ task wrapper(type: Wrapper) {
 task archiveZip(type: Zip, dependsOn: 'jar') {
     baseName = 'project'
 
-    from fileTree('out')
+    from fileTree('build/libs')
 
 }
