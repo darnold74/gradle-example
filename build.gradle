@@ -80,4 +80,5 @@ task archiveZip(type: Zip, dependsOn: 'jar') {
     baseName = 'project'
 
     from fileTree('out')
+
 }
