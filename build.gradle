@@ -4,11 +4,16 @@ version '1.0-SNAPSHOT'
 buildscript {
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-RC2'
         classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.+')
     }
+}
+
+allprojects {
+    apply plugin: "com.jfrog.artifactory"
 }
 
 repositories {
@@ -93,4 +98,19 @@ task archiveZip(type: Zip, dependsOn: 'jar') {
 
     from fileTree('build/libs')
 
+}
+
+artifactory {
+    contextUrl = 'http://localhost:8081/artifactory'
+    publish {
+        repository {
+            repoKey = "gradle-dev-local"
+            username = "jenkins_jfrog"
+            password = "AP5qKr8jwTzMccQs6cvDWCkvvLj"
+            maven =  true
+        }
+        publications('mavenJava')
+        publicArtifacts = true
+        publishPom = true
+    }
 }
