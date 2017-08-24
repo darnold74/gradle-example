@@ -8,7 +8,7 @@ buildscript {
     }
     dependencies {
         classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-RC2'
-        classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.+')
+        classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: 'latest.release')
     }
 }
 
@@ -109,8 +109,14 @@ artifactory {
             password = "AP5qKr8jwTzMccQs6cvDWCkvvLj"
             maven =  true
         }
-        publications('mavenJava')
-        publicArtifacts = true
-        publishPom = true
+        defaults {
+            publications('mavenJava')
+            publishArtifacts = true
+            publishBuildInfo = true
+            publishPom = true
+        }
+    }
+    resolve{
+        repoKey = 'jcenter'
     }
 }
